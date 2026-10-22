@@ -1,0 +1,2143 @@
+{
+  "id": "snapshot",
+  "title": "Snapshot catch-up",
+  "blurb": "A follower is down while the leader compacts its log. When the follower restarts, the leader installs a snapshot instead of replaying every entry.",
+  "seed": 14,
+  "nodes": [
+    "n1",
+    "n2",
+    "n3"
+  ],
+  "durationMs": 526,
+  "events": [
+    {
+      "t": 0,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n2": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n3": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        }
+      }
+    },
+    {
+      "t": 40,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n2": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n3": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        }
+      }
+    },
+    {
+      "t": 80,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n2": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n3": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        }
+      }
+    },
+    {
+      "t": 100,
+      "kind": "role",
+      "node": "n1",
+      "role": "pre-candidate",
+      "term": 0
+    },
+    {
+      "t": 100,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "pre-candidate",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n2": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n3": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        }
+      }
+    },
+    {
+      "t": 100,
+      "kind": "rpc",
+      "rpc": "PreVote",
+      "from": "n1",
+      "to": "n2",
+      "term": 1
+    },
+    {
+      "t": 100,
+      "kind": "rpc",
+      "rpc": "PreVote",
+      "from": "n1",
+      "to": "n3",
+      "term": 1
+    },
+    {
+      "t": 104,
+      "kind": "rpc",
+      "rpc": "PreVoteReply",
+      "from": "n2",
+      "to": "n1",
+      "term": 0,
+      "ok": true
+    },
+    {
+      "t": 104,
+      "kind": "rpc",
+      "rpc": "PreVoteReply",
+      "from": "n3",
+      "to": "n1",
+      "term": 0,
+      "ok": true
+    },
+    {
+      "t": 108,
+      "kind": "role",
+      "node": "n1",
+      "role": "candidate",
+      "term": 1
+    },
+    {
+      "t": 108,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "candidate",
+          "term": 1,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n2": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n3": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        }
+      }
+    },
+    {
+      "t": 108,
+      "kind": "rpc",
+      "rpc": "RequestVote",
+      "from": "n1",
+      "to": "n2",
+      "term": 1
+    },
+    {
+      "t": 108,
+      "kind": "rpc",
+      "rpc": "RequestVote",
+      "from": "n1",
+      "to": "n3",
+      "term": 1
+    },
+    {
+      "t": 112,
+      "kind": "rpc",
+      "rpc": "VoteReply",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true
+    },
+    {
+      "t": 112,
+      "kind": "rpc",
+      "rpc": "VoteReply",
+      "from": "n3",
+      "to": "n1",
+      "term": 1,
+      "ok": true
+    },
+    {
+      "t": 116,
+      "kind": "role",
+      "node": "n1",
+      "role": "leader",
+      "term": 1
+    },
+    {
+      "t": 116,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": []
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n3": {
+          "role": "follower",
+          "term": 1,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": null,
+          "crashed": false,
+          "log": []
+        }
+      }
+    },
+    {
+      "t": 116,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 116,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n3",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 120,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 1,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            }
+          ]
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n3": {
+          "role": "follower",
+          "term": 1,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": null,
+          "crashed": false,
+          "log": []
+        }
+      }
+    },
+    {
+      "t": 120,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 120,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n3",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 130,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n3",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 132,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 134,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n3",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 136,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 138,
+      "kind": "client",
+      "op": "put",
+      "key": "k0",
+      "status": "ok",
+      "client": "c1",
+      "value": "v0"
+    },
+    {
+      "t": 160,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 2,
+          "applied": 2,
+          "lastIndex": 2,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "k0",
+              "value": "v0"
+            }
+          ]
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 1,
+          "applied": 1,
+          "lastIndex": 2,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "k0",
+              "value": "v0"
+            }
+          ]
+        },
+        "n3": {
+          "role": "follower",
+          "term": 1,
+          "commit": 2,
+          "applied": 2,
+          "lastIndex": 2,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "k0",
+              "value": "v0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "t": 168,
+      "kind": "crash",
+      "node": "n3"
+    },
+    {
+      "t": 168,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 2,
+          "applied": 2,
+          "lastIndex": 2,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "k0",
+              "value": "v0"
+            }
+          ]
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 2,
+          "applied": 2,
+          "lastIndex": 2,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "k0",
+              "value": "v0"
+            }
+          ]
+        },
+        "n3": {
+          "role": "down",
+          "term": 1,
+          "commit": 2,
+          "applied": 2,
+          "lastIndex": 2,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": true,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "k0",
+              "value": "v0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "t": 168,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 168,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n3",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 172,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 176,
+      "kind": "client",
+      "op": "put",
+      "key": "k1",
+      "status": "ok",
+      "client": "c1",
+      "value": "v1"
+    },
+    {
+      "t": 184,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 188,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 192,
+      "kind": "client",
+      "op": "put",
+      "key": "k2",
+      "status": "ok",
+      "client": "c1",
+      "value": "v2"
+    },
+    {
+      "t": 200,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 4,
+          "applied": 4,
+          "lastIndex": 5,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "k0",
+              "value": "v0"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "k1",
+              "value": "v1"
+            },
+            {
+              "i": 4,
+              "t": 1,
+              "op": "PUT",
+              "key": "k2",
+              "value": "v2"
+            },
+            {
+              "i": 5,
+              "t": 1,
+              "op": "PUT",
+              "key": "k3",
+              "value": "v3"
+            }
+          ]
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 4,
+          "applied": 4,
+          "lastIndex": 4,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "k0",
+              "value": "v0"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "k1",
+              "value": "v1"
+            },
+            {
+              "i": 4,
+              "t": 1,
+              "op": "PUT",
+              "key": "k2",
+              "value": "v2"
+            }
+          ]
+        },
+        "n3": {
+          "role": "down",
+          "term": 1,
+          "commit": 2,
+          "applied": 2,
+          "lastIndex": 2,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": true,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "k0",
+              "value": "v0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "t": 200,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n3",
+      "term": 1,
+      "entries": 3
+    },
+    {
+      "t": 200,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 204,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 208,
+      "kind": "client",
+      "op": "put",
+      "key": "k3",
+      "status": "ok",
+      "client": "c1",
+      "value": "v3"
+    },
+    {
+      "t": 216,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 220,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n3",
+      "term": 1,
+      "entries": 4
+    },
+    {
+      "t": 220,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 224,
+      "kind": "snapshot",
+      "node": "n1",
+      "index": 6
+    },
+    {
+      "t": 224,
+      "kind": "client",
+      "op": "put",
+      "key": "k4",
+      "status": "ok",
+      "client": "c1",
+      "value": "v4"
+    },
+    {
+      "t": 228,
+      "kind": "snapshot",
+      "node": "n2",
+      "index": 6
+    },
+    {
+      "t": 232,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 236,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 240,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 6,
+          "applied": 6,
+          "lastIndex": 7,
+          "snapshot": 6,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 7,
+              "t": 1,
+              "op": "PUT",
+              "key": "k5",
+              "value": "v5"
+            }
+          ]
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 6,
+          "applied": 6,
+          "lastIndex": 7,
+          "snapshot": 6,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 7,
+              "t": 1,
+              "op": "PUT",
+              "key": "k5",
+              "value": "v5"
+            }
+          ]
+        },
+        "n3": {
+          "role": "down",
+          "term": 1,
+          "commit": 2,
+          "applied": 2,
+          "lastIndex": 2,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": true,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "k0",
+              "value": "v0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "t": 240,
+      "kind": "rpc",
+      "rpc": "InstallSnapshot",
+      "from": "n1",
+      "to": "n3",
+      "term": 1
+    },
+    {
+      "t": 240,
+      "kind": "client",
+      "op": "put",
+      "key": "k5",
+      "status": "ok",
+      "client": "c1",
+      "value": "v5"
+    },
+    {
+      "t": 248,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 252,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 256,
+      "kind": "client",
+      "op": "put",
+      "key": "k6",
+      "status": "ok",
+      "client": "c1",
+      "value": "v6"
+    },
+    {
+      "t": 260,
+      "kind": "rpc",
+      "rpc": "InstallSnapshot",
+      "from": "n1",
+      "to": "n3",
+      "term": 1
+    },
+    {
+      "t": 264,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 268,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 272,
+      "kind": "client",
+      "op": "put",
+      "key": "k7",
+      "status": "ok",
+      "client": "c1",
+      "value": "v7"
+    },
+    {
+      "t": 280,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 9,
+          "applied": 9,
+          "lastIndex": 10,
+          "snapshot": 6,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 7,
+              "t": 1,
+              "op": "PUT",
+              "key": "k5",
+              "value": "v5"
+            },
+            {
+              "i": 8,
+              "t": 1,
+              "op": "PUT",
+              "key": "k6",
+              "value": "v6"
+            },
+            {
+              "i": 9,
+              "t": 1,
+              "op": "PUT",
+              "key": "k7",
+              "value": "v7"
+            },
+            {
+              "i": 10,
+              "t": 1,
+              "op": "PUT",
+              "key": "k8",
+              "value": "v8"
+            }
+          ]
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 9,
+          "applied": 9,
+          "lastIndex": 9,
+          "snapshot": 6,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 7,
+              "t": 1,
+              "op": "PUT",
+              "key": "k5",
+              "value": "v5"
+            },
+            {
+              "i": 8,
+              "t": 1,
+              "op": "PUT",
+              "key": "k6",
+              "value": "v6"
+            },
+            {
+              "i": 9,
+              "t": 1,
+              "op": "PUT",
+              "key": "k7",
+              "value": "v7"
+            }
+          ]
+        },
+        "n3": {
+          "role": "down",
+          "term": 1,
+          "commit": 2,
+          "applied": 2,
+          "lastIndex": 2,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": true,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "k0",
+              "value": "v0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "t": 280,
+      "kind": "rpc",
+      "rpc": "InstallSnapshot",
+      "from": "n1",
+      "to": "n3",
+      "term": 1
+    },
+    {
+      "t": 280,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 284,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 288,
+      "kind": "client",
+      "op": "put",
+      "key": "k8",
+      "status": "ok",
+      "client": "c1",
+      "value": "v8"
+    },
+    {
+      "t": 296,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 300,
+      "kind": "rpc",
+      "rpc": "InstallSnapshot",
+      "from": "n1",
+      "to": "n3",
+      "term": 1
+    },
+    {
+      "t": 300,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 304,
+      "kind": "client",
+      "op": "put",
+      "key": "k9",
+      "status": "ok",
+      "client": "c1",
+      "value": "v9"
+    },
+    {
+      "t": 312,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 316,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 320,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 11,
+          "applied": 11,
+          "lastIndex": 12,
+          "snapshot": 6,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 7,
+              "t": 1,
+              "op": "PUT",
+              "key": "k5",
+              "value": "v5"
+            },
+            {
+              "i": 8,
+              "t": 1,
+              "op": "PUT",
+              "key": "k6",
+              "value": "v6"
+            },
+            {
+              "i": 9,
+              "t": 1,
+              "op": "PUT",
+              "key": "k7",
+              "value": "v7"
+            },
+            {
+              "i": 10,
+              "t": 1,
+              "op": "PUT",
+              "key": "k8",
+              "value": "v8"
+            },
+            {
+              "i": 11,
+              "t": 1,
+              "op": "PUT",
+              "key": "k9",
+              "value": "v9"
+            },
+            {
+              "i": 12,
+              "t": 1,
+              "op": "PUT",
+              "key": "k10",
+              "value": "v10"
+            }
+          ]
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 11,
+          "applied": 11,
+          "lastIndex": 12,
+          "snapshot": 6,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 7,
+              "t": 1,
+              "op": "PUT",
+              "key": "k5",
+              "value": "v5"
+            },
+            {
+              "i": 8,
+              "t": 1,
+              "op": "PUT",
+              "key": "k6",
+              "value": "v6"
+            },
+            {
+              "i": 9,
+              "t": 1,
+              "op": "PUT",
+              "key": "k7",
+              "value": "v7"
+            },
+            {
+              "i": 10,
+              "t": 1,
+              "op": "PUT",
+              "key": "k8",
+              "value": "v8"
+            },
+            {
+              "i": 11,
+              "t": 1,
+              "op": "PUT",
+              "key": "k9",
+              "value": "v9"
+            },
+            {
+              "i": 12,
+              "t": 1,
+              "op": "PUT",
+              "key": "k10",
+              "value": "v10"
+            }
+          ]
+        },
+        "n3": {
+          "role": "down",
+          "term": 1,
+          "commit": 2,
+          "applied": 2,
+          "lastIndex": 2,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": true,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "k0",
+              "value": "v0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "t": 320,
+      "kind": "rpc",
+      "rpc": "InstallSnapshot",
+      "from": "n1",
+      "to": "n3",
+      "term": 1
+    },
+    {
+      "t": 320,
+      "kind": "snapshot",
+      "node": "n1",
+      "index": 12
+    },
+    {
+      "t": 320,
+      "kind": "client",
+      "op": "put",
+      "key": "k10",
+      "status": "ok",
+      "client": "c1",
+      "value": "v10"
+    },
+    {
+      "t": 324,
+      "kind": "snapshot",
+      "node": "n2",
+      "index": 12
+    },
+    {
+      "t": 328,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 332,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 336,
+      "kind": "client",
+      "op": "put",
+      "key": "k11",
+      "status": "ok",
+      "client": "c1",
+      "value": "v11"
+    },
+    {
+      "t": 340,
+      "kind": "rpc",
+      "rpc": "InstallSnapshot",
+      "from": "n1",
+      "to": "n3",
+      "term": 1
+    },
+    {
+      "t": 344,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 348,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 352,
+      "kind": "client",
+      "op": "put",
+      "key": "k12",
+      "status": "ok",
+      "client": "c1",
+      "value": "v12"
+    },
+    {
+      "t": 360,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 14,
+          "applied": 14,
+          "lastIndex": 15,
+          "snapshot": 12,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 13,
+              "t": 1,
+              "op": "PUT",
+              "key": "k11",
+              "value": "v11"
+            },
+            {
+              "i": 14,
+              "t": 1,
+              "op": "PUT",
+              "key": "k12",
+              "value": "v12"
+            },
+            {
+              "i": 15,
+              "t": 1,
+              "op": "PUT",
+              "key": "k13",
+              "value": "v13"
+            }
+          ]
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 14,
+          "applied": 14,
+          "lastIndex": 14,
+          "snapshot": 12,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 13,
+              "t": 1,
+              "op": "PUT",
+              "key": "k11",
+              "value": "v11"
+            },
+            {
+              "i": 14,
+              "t": 1,
+              "op": "PUT",
+              "key": "k12",
+              "value": "v12"
+            }
+          ]
+        },
+        "n3": {
+          "role": "down",
+          "term": 1,
+          "commit": 2,
+          "applied": 2,
+          "lastIndex": 2,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": true,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "k0",
+              "value": "v0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "t": 360,
+      "kind": "rpc",
+      "rpc": "InstallSnapshot",
+      "from": "n1",
+      "to": "n3",
+      "term": 1
+    },
+    {
+      "t": 360,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 364,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 368,
+      "kind": "client",
+      "op": "put",
+      "key": "k13",
+      "status": "ok",
+      "client": "c1",
+      "value": "v13"
+    },
+    {
+      "t": 376,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 380,
+      "kind": "rpc",
+      "rpc": "InstallSnapshot",
+      "from": "n1",
+      "to": "n3",
+      "term": 1
+    },
+    {
+      "t": 380,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 384,
+      "kind": "client",
+      "op": "put",
+      "key": "k14",
+      "status": "ok",
+      "client": "c1",
+      "value": "v14"
+    },
+    {
+      "t": 392,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 396,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 400,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 16,
+          "applied": 16,
+          "lastIndex": 17,
+          "snapshot": 12,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 13,
+              "t": 1,
+              "op": "PUT",
+              "key": "k11",
+              "value": "v11"
+            },
+            {
+              "i": 14,
+              "t": 1,
+              "op": "PUT",
+              "key": "k12",
+              "value": "v12"
+            },
+            {
+              "i": 15,
+              "t": 1,
+              "op": "PUT",
+              "key": "k13",
+              "value": "v13"
+            },
+            {
+              "i": 16,
+              "t": 1,
+              "op": "PUT",
+              "key": "k14",
+              "value": "v14"
+            },
+            {
+              "i": 17,
+              "t": 1,
+              "op": "PUT",
+              "key": "k15",
+              "value": "v15"
+            }
+          ]
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 16,
+          "applied": 16,
+          "lastIndex": 17,
+          "snapshot": 12,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 13,
+              "t": 1,
+              "op": "PUT",
+              "key": "k11",
+              "value": "v11"
+            },
+            {
+              "i": 14,
+              "t": 1,
+              "op": "PUT",
+              "key": "k12",
+              "value": "v12"
+            },
+            {
+              "i": 15,
+              "t": 1,
+              "op": "PUT",
+              "key": "k13",
+              "value": "v13"
+            },
+            {
+              "i": 16,
+              "t": 1,
+              "op": "PUT",
+              "key": "k14",
+              "value": "v14"
+            },
+            {
+              "i": 17,
+              "t": 1,
+              "op": "PUT",
+              "key": "k15",
+              "value": "v15"
+            }
+          ]
+        },
+        "n3": {
+          "role": "down",
+          "term": 1,
+          "commit": 2,
+          "applied": 2,
+          "lastIndex": 2,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": true,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "k0",
+              "value": "v0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "t": 400,
+      "kind": "rpc",
+      "rpc": "InstallSnapshot",
+      "from": "n1",
+      "to": "n3",
+      "term": 1
+    },
+    {
+      "t": 400,
+      "kind": "client",
+      "op": "put",
+      "key": "k15",
+      "status": "ok",
+      "client": "c1",
+      "value": "v15"
+    },
+    {
+      "t": 408,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 412,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 416,
+      "kind": "snapshot",
+      "node": "n1",
+      "index": 18
+    },
+    {
+      "t": 416,
+      "kind": "client",
+      "op": "put",
+      "key": "k16",
+      "status": "ok",
+      "client": "c1",
+      "value": "v16"
+    },
+    {
+      "t": 416,
+      "kind": "restart",
+      "node": "n3"
+    },
+    {
+      "t": 416,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 18,
+          "applied": 18,
+          "lastIndex": 18,
+          "snapshot": 18,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": []
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 17,
+          "applied": 17,
+          "lastIndex": 18,
+          "snapshot": 12,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 13,
+              "t": 1,
+              "op": "PUT",
+              "key": "k11",
+              "value": "v11"
+            },
+            {
+              "i": 14,
+              "t": 1,
+              "op": "PUT",
+              "key": "k12",
+              "value": "v12"
+            },
+            {
+              "i": 15,
+              "t": 1,
+              "op": "PUT",
+              "key": "k13",
+              "value": "v13"
+            },
+            {
+              "i": 16,
+              "t": 1,
+              "op": "PUT",
+              "key": "k14",
+              "value": "v14"
+            },
+            {
+              "i": 17,
+              "t": 1,
+              "op": "PUT",
+              "key": "k15",
+              "value": "v15"
+            },
+            {
+              "i": 18,
+              "t": 1,
+              "op": "PUT",
+              "key": "k16",
+              "value": "v16"
+            }
+          ]
+        },
+        "n3": {
+          "role": "follower",
+          "term": 1,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 2,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": null,
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "k0",
+              "value": "v0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "t": 420,
+      "kind": "rpc",
+      "rpc": "InstallSnapshot",
+      "from": "n1",
+      "to": "n3",
+      "term": 1
+    },
+    {
+      "t": 420,
+      "kind": "snapshot",
+      "node": "n2",
+      "index": 18
+    },
+    {
+      "t": 424,
+      "kind": "snapshot",
+      "node": "n3",
+      "index": 18
+    },
+    {
+      "t": 424,
+      "kind": "rpc",
+      "rpc": "SnapshotReply",
+      "from": "n3",
+      "to": "n1",
+      "term": 1,
+      "ok": true
+    },
+    {
+      "t": 440,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 18,
+          "applied": 18,
+          "lastIndex": 18,
+          "snapshot": 18,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": []
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 18,
+          "applied": 18,
+          "lastIndex": 18,
+          "snapshot": 18,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": []
+        },
+        "n3": {
+          "role": "follower",
+          "term": 1,
+          "commit": 18,
+          "applied": 18,
+          "lastIndex": 18,
+          "snapshot": 18,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": []
+        }
+      }
+    },
+    {
+      "t": 480,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 18,
+          "applied": 18,
+          "lastIndex": 18,
+          "snapshot": 18,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": []
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 18,
+          "applied": 18,
+          "lastIndex": 18,
+          "snapshot": 18,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": []
+        },
+        "n3": {
+          "role": "follower",
+          "term": 1,
+          "commit": 18,
+          "applied": 18,
+          "lastIndex": 18,
+          "snapshot": 18,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": []
+        }
+      }
+    },
+    {
+      "t": 520,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 18,
+          "applied": 18,
+          "lastIndex": 18,
+          "snapshot": 18,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": []
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 18,
+          "applied": 18,
+          "lastIndex": 18,
+          "snapshot": 18,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": []
+        },
+        "n3": {
+          "role": "follower",
+          "term": 1,
+          "commit": 18,
+          "applied": 18,
+          "lastIndex": 18,
+          "snapshot": 18,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": []
+        }
+      }
+    }
+  ]
+}

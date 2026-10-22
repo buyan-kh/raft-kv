@@ -1,0 +1,28 @@
+{
+  "scenarios": [
+    {
+      "id": "election",
+      "title": "Election and replication",
+      "blurb": "Three nodes start together. The shortest timer wins a pre-vote, then a real election, appends a no-op, and replicates two puts.",
+      "file": "election.json"
+    },
+    {
+      "id": "partition",
+      "title": "Partition and re-election",
+      "blurb": "The leader is cut off alone. It cannot commit. The remaining four nodes elect a new leader, commit, and the old leader catches up after the partition heals.",
+      "file": "partition.json"
+    },
+    {
+      "id": "crash",
+      "title": "Leader crash and restart",
+      "blurb": "A committed write survives the leader's crash. A new leader is elected from the surviving majority, and the restarted node rebuilds from its durable log.",
+      "file": "crash.json"
+    },
+    {
+      "id": "snapshot",
+      "title": "Snapshot catch-up",
+      "blurb": "A follower is down while the leader compacts its log. When the follower restarts, the leader installs a snapshot instead of replaying every entry.",
+      "file": "snapshot.json"
+    }
+  ]
+}

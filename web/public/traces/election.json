@@ -1,0 +1,1225 @@
+{
+  "id": "election",
+  "title": "Election and replication",
+  "blurb": "Three nodes start together. The shortest timer wins a pre-vote, then a real election, appends a no-op, and replicates two puts.",
+  "seed": 11,
+  "nodes": [
+    "n1",
+    "n2",
+    "n3"
+  ],
+  "durationMs": 412,
+  "events": [
+    {
+      "t": 0,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n2": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n3": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        }
+      }
+    },
+    {
+      "t": 40,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n2": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n3": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        }
+      }
+    },
+    {
+      "t": 80,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n2": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n3": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        }
+      }
+    },
+    {
+      "t": 100,
+      "kind": "role",
+      "node": "n1",
+      "role": "pre-candidate",
+      "term": 0
+    },
+    {
+      "t": 100,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "pre-candidate",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n2": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n3": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        }
+      }
+    },
+    {
+      "t": 100,
+      "kind": "rpc",
+      "rpc": "PreVote",
+      "from": "n1",
+      "to": "n2",
+      "term": 1
+    },
+    {
+      "t": 100,
+      "kind": "rpc",
+      "rpc": "PreVote",
+      "from": "n1",
+      "to": "n3",
+      "term": 1
+    },
+    {
+      "t": 108,
+      "kind": "rpc",
+      "rpc": "PreVoteReply",
+      "from": "n2",
+      "to": "n1",
+      "term": 0,
+      "ok": true
+    },
+    {
+      "t": 108,
+      "kind": "rpc",
+      "rpc": "PreVoteReply",
+      "from": "n3",
+      "to": "n1",
+      "term": 0,
+      "ok": true
+    },
+    {
+      "t": 116,
+      "kind": "role",
+      "node": "n1",
+      "role": "candidate",
+      "term": 1
+    },
+    {
+      "t": 116,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "candidate",
+          "term": 1,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n2": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n3": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        }
+      }
+    },
+    {
+      "t": 116,
+      "kind": "rpc",
+      "rpc": "RequestVote",
+      "from": "n1",
+      "to": "n2",
+      "term": 1
+    },
+    {
+      "t": 116,
+      "kind": "rpc",
+      "rpc": "RequestVote",
+      "from": "n1",
+      "to": "n3",
+      "term": 1
+    },
+    {
+      "t": 120,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "candidate",
+          "term": 1,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n2": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n3": {
+          "role": "follower",
+          "term": 0,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": null,
+          "leader": null,
+          "crashed": false,
+          "log": []
+        }
+      }
+    },
+    {
+      "t": 124,
+      "kind": "rpc",
+      "rpc": "VoteReply",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true
+    },
+    {
+      "t": 124,
+      "kind": "rpc",
+      "rpc": "VoteReply",
+      "from": "n3",
+      "to": "n1",
+      "term": 1,
+      "ok": true
+    },
+    {
+      "t": 132,
+      "kind": "role",
+      "node": "n1",
+      "role": "leader",
+      "term": 1
+    },
+    {
+      "t": 132,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": []
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": null,
+          "crashed": false,
+          "log": []
+        },
+        "n3": {
+          "role": "follower",
+          "term": 1,
+          "commit": 0,
+          "applied": 0,
+          "lastIndex": 0,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": null,
+          "crashed": false,
+          "log": []
+        }
+      }
+    },
+    {
+      "t": 132,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 132,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n3",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 140,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 140,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n3",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 150,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n3",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 158,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n3",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 160,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 1,
+          "applied": 1,
+          "lastIndex": 2,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            }
+          ]
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 1,
+          "applied": 1,
+          "lastIndex": 1,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            }
+          ]
+        },
+        "n3": {
+          "role": "follower",
+          "term": 1,
+          "commit": 1,
+          "applied": 1,
+          "lastIndex": 2,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "t": 164,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 166,
+      "kind": "client",
+      "op": "put",
+      "key": "alpha",
+      "status": "ok",
+      "client": "c1",
+      "value": "1"
+    },
+    {
+      "t": 172,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 180,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n2",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 182,
+      "kind": "rpc",
+      "rpc": "AppendEntries",
+      "from": "n1",
+      "to": "n3",
+      "term": 1,
+      "entries": 1
+    },
+    {
+      "t": 188,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n2",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 190,
+      "kind": "rpc",
+      "rpc": "AppendOk",
+      "from": "n3",
+      "to": "n1",
+      "term": 1,
+      "ok": true,
+      "entries": 1
+    },
+    {
+      "t": 196,
+      "kind": "client",
+      "op": "put",
+      "key": "beta",
+      "status": "ok",
+      "client": "c1",
+      "value": "2"
+    },
+    {
+      "t": 200,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 3,
+          "applied": 3,
+          "lastIndex": 3,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "beta",
+              "value": "2"
+            }
+          ]
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 2,
+          "applied": 2,
+          "lastIndex": 3,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "beta",
+              "value": "2"
+            }
+          ]
+        },
+        "n3": {
+          "role": "follower",
+          "term": 1,
+          "commit": 2,
+          "applied": 2,
+          "lastIndex": 3,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "beta",
+              "value": "2"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "t": 212,
+      "kind": "client",
+      "op": "get",
+      "key": "alpha",
+      "status": "ok",
+      "client": "c2",
+      "value": "1",
+      "found": true
+    },
+    {
+      "t": 240,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 3,
+          "applied": 3,
+          "lastIndex": 3,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "beta",
+              "value": "2"
+            }
+          ]
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 3,
+          "applied": 3,
+          "lastIndex": 3,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "beta",
+              "value": "2"
+            }
+          ]
+        },
+        "n3": {
+          "role": "follower",
+          "term": 1,
+          "commit": 3,
+          "applied": 3,
+          "lastIndex": 3,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "beta",
+              "value": "2"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "t": 280,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 3,
+          "applied": 3,
+          "lastIndex": 3,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "beta",
+              "value": "2"
+            }
+          ]
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 3,
+          "applied": 3,
+          "lastIndex": 3,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "beta",
+              "value": "2"
+            }
+          ]
+        },
+        "n3": {
+          "role": "follower",
+          "term": 1,
+          "commit": 3,
+          "applied": 3,
+          "lastIndex": 3,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "beta",
+              "value": "2"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "t": 320,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 3,
+          "applied": 3,
+          "lastIndex": 3,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "beta",
+              "value": "2"
+            }
+          ]
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 3,
+          "applied": 3,
+          "lastIndex": 3,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "beta",
+              "value": "2"
+            }
+          ]
+        },
+        "n3": {
+          "role": "follower",
+          "term": 1,
+          "commit": 3,
+          "applied": 3,
+          "lastIndex": 3,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "beta",
+              "value": "2"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "t": 360,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 3,
+          "applied": 3,
+          "lastIndex": 3,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "beta",
+              "value": "2"
+            }
+          ]
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 3,
+          "applied": 3,
+          "lastIndex": 3,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "beta",
+              "value": "2"
+            }
+          ]
+        },
+        "n3": {
+          "role": "follower",
+          "term": 1,
+          "commit": 3,
+          "applied": 3,
+          "lastIndex": 3,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "beta",
+              "value": "2"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "t": 400,
+      "kind": "state",
+      "nodes": {
+        "n1": {
+          "role": "leader",
+          "term": 1,
+          "commit": 3,
+          "applied": 3,
+          "lastIndex": 3,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "beta",
+              "value": "2"
+            }
+          ]
+        },
+        "n2": {
+          "role": "follower",
+          "term": 1,
+          "commit": 3,
+          "applied": 3,
+          "lastIndex": 3,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "beta",
+              "value": "2"
+            }
+          ]
+        },
+        "n3": {
+          "role": "follower",
+          "term": 1,
+          "commit": 3,
+          "applied": 3,
+          "lastIndex": 3,
+          "snapshot": 0,
+          "votedFor": "n1",
+          "leader": "n1",
+          "crashed": false,
+          "log": [
+            {
+              "i": 1,
+              "t": 1,
+              "op": "NOOP"
+            },
+            {
+              "i": 2,
+              "t": 1,
+              "op": "PUT",
+              "key": "alpha",
+              "value": "1"
+            },
+            {
+              "i": 3,
+              "t": 1,
+              "op": "PUT",
+              "key": "beta",
+              "value": "2"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
