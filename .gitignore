@@ -1,0 +1,12 @@
+.gradle/
+build/
+data/
+out/
+*.log
+.DS_Store
+.idea/
+*.iml
+web/node_modules/
+web/.next/
+web/out/
+web/.vercel/
