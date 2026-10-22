@@ -1,0 +1,216 @@
+{
+  "seeds": 20,
+  "nodes": 5,
+  "clients": 3,
+  "keys": 5,
+  "lossRate": 0.05,
+  "delayMs": "2-12",
+  "maxOpsPerSeed": 60,
+  "virtualBudgetMs": 12000,
+  "violations": 0,
+  "convergenceFailures": 0,
+  "wallTimeMs": 148,
+  "checker": "per-key Wing/Gong linearizability, INFO writes may or may not take effect",
+  "runs": [
+    {
+      "seed": 1,
+      "ops": 60,
+      "ok": 65,
+      "info": 0,
+      "fail": 0,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    },
+    {
+      "seed": 2,
+      "ops": 60,
+      "ok": 63,
+      "info": 2,
+      "fail": 0,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    },
+    {
+      "seed": 3,
+      "ops": 60,
+      "ok": 64,
+      "info": 0,
+      "fail": 1,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    },
+    {
+      "seed": 4,
+      "ops": 60,
+      "ok": 65,
+      "info": 0,
+      "fail": 0,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    },
+    {
+      "seed": 5,
+      "ops": 60,
+      "ok": 65,
+      "info": 0,
+      "fail": 0,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    },
+    {
+      "seed": 6,
+      "ops": 60,
+      "ok": 65,
+      "info": 0,
+      "fail": 0,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    },
+    {
+      "seed": 7,
+      "ops": 60,
+      "ok": 64,
+      "info": 0,
+      "fail": 1,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    },
+    {
+      "seed": 8,
+      "ops": 60,
+      "ok": 64,
+      "info": 0,
+      "fail": 1,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    },
+    {
+      "seed": 9,
+      "ops": 60,
+      "ok": 65,
+      "info": 0,
+      "fail": 0,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    },
+    {
+      "seed": 10,
+      "ops": 60,
+      "ok": 65,
+      "info": 0,
+      "fail": 0,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    },
+    {
+      "seed": 11,
+      "ops": 60,
+      "ok": 65,
+      "info": 0,
+      "fail": 0,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    },
+    {
+      "seed": 12,
+      "ops": 60,
+      "ok": 65,
+      "info": 0,
+      "fail": 0,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    },
+    {
+      "seed": 13,
+      "ops": 60,
+      "ok": 65,
+      "info": 0,
+      "fail": 0,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    },
+    {
+      "seed": 14,
+      "ops": 60,
+      "ok": 64,
+      "info": 0,
+      "fail": 1,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    },
+    {
+      "seed": 15,
+      "ops": 60,
+      "ok": 65,
+      "info": 0,
+      "fail": 0,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    },
+    {
+      "seed": 16,
+      "ops": 60,
+      "ok": 65,
+      "info": 0,
+      "fail": 0,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    },
+    {
+      "seed": 17,
+      "ops": 60,
+      "ok": 63,
+      "info": 1,
+      "fail": 1,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    },
+    {
+      "seed": 18,
+      "ops": 60,
+      "ok": 65,
+      "info": 0,
+      "fail": 0,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    },
+    {
+      "seed": 19,
+      "ops": 60,
+      "ok": 65,
+      "info": 0,
+      "fail": 0,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    },
+    {
+      "seed": 20,
+      "ops": 60,
+      "ok": 64,
+      "info": 0,
+      "fail": 1,
+      "linearizable": true,
+      "converged": true,
+      "detail": "linearizable"
+    }
+  ]
+}
